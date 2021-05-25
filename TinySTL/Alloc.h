@@ -27,7 +27,7 @@ namespace TinySTL{
 			//利用union节省了空间，这个区块既可以放下一块的指针，又可以存放数据
 			union obj *next;
 			char client[1];
-			// ps扩展：含有类类型成员的union需要封装到类中并定义拷贝成员控制函数，见C书
+			// ps扩展：含有类类型成员的union需要封装到类中并定义拷贝成员控制函数，见Primer
 		};
 		static obj *free_list[ENFreeLists::NFREELISTS];//这里调用了上方的宏，之所以使用静态是为了让这部分唯一（不唯一则不安全）
 	private:

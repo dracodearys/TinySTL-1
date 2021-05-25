@@ -43,14 +43,19 @@ namespace TinySTL{
 		template <class T1, class T2>
 		friend bool operator>= (const pair<T1, T2>& lhs, const pair<T1, T2>& rhs);
 		template <class T1, class T2>
-		friend void swap(pair<T1, T2>& x, pair<T1, T2>& y);		//为什么要加友元？？？？？？？？？？
+		friend void swap(pair<T1, T2>& x, pair<T1, T2>& y);		// 为什么要加友元？？？？？？？？？？
+												// ps因为 =运算符 不是类的成员，应该正确区分从属关系
 		
 	};
+
 	template<class T1, class T2>
 	template<class U, class V>
 	pair<T1, T2>::pair(const pair<U, V>& pr) :first(pr.first), second(pr.second){}
+				// 如果uv和t1t2类型不同怎么办？？
+
 	template<class T1, class T2>
 	pair<T1, T2>::pair(const first_type& a, const second_type& b) : first(a), second(b){}
+	
 	template<class T1, class T2>
 	pair<T1, T2>& pair<T1, T2>::operator =(const pair<T1, T2>& pr){
 		if (this != &pr){
@@ -59,11 +64,12 @@ namespace TinySTL{
 		}
 		return *this;
 	}
+
 	template<class T1, class T2>
 	void pair<T1, T2>::swap(pair<T1, T2>& pr){
 		TinySTL::swap(first, pr.first);
 		TinySTL::swap(second, pr.second);
-	}
+	}			// 用法： x.swap(y);
 
 	template <class T1, class T2>
 	bool operator== (const pair<T1, T2>& lhs, const pair<T1, T2>& rhs){
