@@ -66,5 +66,5 @@ namespace TinySTL{
 	};// end of bitmap
 }
 
-#include "Detail\Bitmap.impl.h"
+#include "Detail/Bitmap.impl.h"
 #endif

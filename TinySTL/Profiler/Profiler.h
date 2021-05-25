@@ -14,7 +14,7 @@
 #include <Psapi.h>
 #pragma comment(lib, "psapi.lib")
 #else
-#include <sys/resource>
+#include <sys/resource.h>
 #include <sys/time.h>
 #endif
 

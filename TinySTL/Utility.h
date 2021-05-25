@@ -5,6 +5,7 @@
 
 namespace TinySTL{
 	//************ [swap] ***************
+	//交换的模板类
 	template<class T>
 	void swap(T& a, T& b){
 		T temp = a;
@@ -12,6 +13,7 @@ namespace TinySTL{
 		b = temp;
 	}
 	//*********** [pair] ****************
+	//pair的模板
 	template<class T1, class T2>
 	struct pair{
 	public:
@@ -23,9 +25,9 @@ namespace TinySTL{
 	public:
 		pair(){}
 		template<class U, class V> 
-		pair(const pair<U, V>& pr);
-		pair(const first_type& a, const second_type& b);
-		pair& operator= (const pair& pr);
+		pair(const pair<U, V>& pr);	//借助引用的赋值
+		pair(const first_type& a, const second_type& b);	//直接初始化
+		pair& operator= (const pair& pr);	//与pair(const pair<U, V>& pr);相同，本质上是调用前者
 		void swap(pair& pr);
 	public:
 		template <class T1, class T2>
@@ -41,7 +43,7 @@ namespace TinySTL{
 		template <class T1, class T2>
 		friend bool operator>= (const pair<T1, T2>& lhs, const pair<T1, T2>& rhs);
 		template <class T1, class T2>
-		friend void swap(pair<T1, T2>& x, pair<T1, T2>& y);
+		friend void swap(pair<T1, T2>& x, pair<T1, T2>& y);		//为什么要加友元？？？？？？？？？？
 		
 	};
 	template<class T1, class T2>

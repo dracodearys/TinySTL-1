@@ -75,6 +75,6 @@ namespace TinySTL{
 	}
 }
 
-#include "Detail\COWPtr.impl.h"
+#include "Detail/COWPtr.impl.h"
 
 #endif

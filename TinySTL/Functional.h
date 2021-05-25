@@ -3,6 +3,7 @@
 
 namespace TinySTL{
 	//********** [less] ****************
+	//顾名思义是个比大小的类
 	template<class T>
 	struct less{
 		typedef T first_argument_type;
@@ -14,6 +15,7 @@ namespace TinySTL{
 		}
 	};
 	//********** [equal_to] ****************
+	//顾名思义是个判断是否相等的类
 	template<class T>
 	struct equal_to{
 		typedef T first_argument_type;
